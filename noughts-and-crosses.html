@@ -59,13 +59,19 @@
             <h1>Just Fun N Games</h1>
             <h2>Where you can fight the boredom and play a game</h2>
             <!-- Gaming information -->
-             <h3>Noughts and Crosses</h3>
+            <h3>Noughts and Crosses</h3>
             <div class="how-to-play">
                 <!-- Button trigger modal -->
-            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#howToPlay">
-                How to Play!
-        </button>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#howToPlay">
+                    How to Play!
+                </button>
             </div>
+            <form>
+                <label for="player-one">Player One</label>
+                <input type="text" name="player-one" id="player-one">
+                <label for="player-two">Player Two</label>
+                <input type="text" name="player-two" id="player-two">
+            </form>
         </section>
 
 
@@ -76,34 +82,38 @@
     </footer>
     </footer>
     <!-- Modal -->
-<div class="modal fade" id="howToPlay" tabindex="-1" aria-labelledby="howToPlayLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">How to play!</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        To play Noughts and Crosses (Tic-Tac-Toe), 
-        two players take turns marking an 'X' or 'O' in a 3x3 grid, aiming to get three of their symbols in a row horizontally, 
-        vertically, or diagonally, while blocking their opponent from doing the same; 
-        the first to achieve this wins, or it's a draw if the grid fills up.<br> 
-        <span class="fw-bold">Setup</span> <br>
-        Grid will be drawn: Nine squares. <br>
-        Choose Symbols: Decide who plays 'X' (Crosses) and who plays 'O' (Noughts).<br> 
-        Decide Who Goes First: The player with 'X' usually goes first. <br>
-        <span class="fw-bold">Gameplay</span><br>
-        Players Take Turns: Players alternate placing their chosen symbol in any empty square on the grid. <br>
-        Aim to Win: The goal is to get three of your symbols in a straight line (across, down, or diagonally). <br>
-        Block Your Opponent: Simultaneously, watch for your opponent's potential lines and place your symbol to block them. 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+    <div class="modal fade" id="howToPlay" tabindex="-1" aria-labelledby="howToPlayLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">How to play!</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    To play Noughts and Crosses (Tic-Tac-Toe),
+                    two players take turns marking an 'X' or 'O' in a 3x3 grid, aiming to get three of their symbols in
+                    a row horizontally,
+                    vertically, or diagonally, while blocking their opponent from doing the same;
+                    the first to achieve this wins, or it's a draw if the grid fills up.<br>
+                    <span class="fw-bold">Setup</span> <br>
+                    Grid will be drawn: Nine squares. <br>
+                    Choose Symbols: Decide who plays 'X' (Crosses) and who plays 'O' (Noughts).<br>
+                    Decide Who Goes First: The player with 'X' usually goes first. <br>
+                    <span class="fw-bold">Gameplay</span><br>
+                    Players Take Turns: Players alternate placing their chosen symbol in any empty square on the grid.
+                    <br>
+                    Aim to Win: The goal is to get three of your symbols in a straight line (across, down, or
+                    diagonally). <br>
+                    Block Your Opponent: Simultaneously, watch for your opponent's potential lines and place your symbol
+                    to block them.
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
-</div>
     <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/aa80f5b7e4.js" crossorigin="anonymous"></script>
     <!-- Bootstap JS File -->
