@@ -21,6 +21,7 @@
     --bg-dark-colour:#141815;
     --noughts-color:#213FCD;
     --crosses-color:#D33131;
+    --squares-color:#567b82;
 }
 /* Asterisk wildcard selector to overide default styles add by the browser */
 * {
@@ -56,6 +57,25 @@
     display: grid;
     justify-content: center;
     grid-template-columns: repeat(3,60px);
-    grid-gap:20px;
-    width:90%;
+    grid-gap:30px;
+    
+}
+
+.square{
+    height:60px;
+    width:60px;
+    cursor: pointer;
+    border: 5px var(--heading-dark-colour) solid;
+    font-size: large;
+    background-color: var(--bg-light-colour);
+}
+
+.square:hover{
+    background:var(--squares-color)
+}
+
+footer{
+    margin-top:20px;
+    padding-top:10px;
+    color: var(--heading-light-colour);
 }
