@@ -56,24 +56,33 @@
     <main>
         <section>
             <!-- Heading -->
-            <h1>Just Fun N Games</h1>
+             <div class="heading">
+                <h1>Just Fun N Games</h1>
             <h2>Where you can fight the boredom and play a game</h2>
+            </div>
+            
             <!-- Gaming information -->
-            <h3>Noughts and Crosses</h3>
-            <div class="how-to-play">
+             <div class="game-title"><h3>Noughts and Crosses</h3>
+            </div>
+            
+            <div class="how-to-play py-2">
                 <!-- Button trigger modal -->
                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#howToPlay">
                     How to Play!
                 </button>
             </div>
-            <div class="playerName">
-                <label for="player-one">Player One</label>
-                <input type="text" name="player-one" id="player-one" placeholder="Player One">
-                <label for="player-two">Player Two</label>
-                <input type="text" name="player-two" id="player-two" placeholder="Player Two">
-            </div>
+            <!-- labels for players to enter their name -->
+             <div class="row">
+                <div class="playerName">
+                    <label for="player-one">Player One</label>
+                    <input type="text" name="player-one" id="player-one" placeholder="Player One">
+                    <label for="player-two">Player Two</label>
+                    <input type="text" name="player-two" id="player-two" placeholder="Player Two">
+                </div>
+            </div>  
         </section>
         <section>
+            <!-- For ease of able to select buttons in a grid -->
             <div class="grid">
                 <button class="square"></button>
                 <button class="square"></button>
@@ -85,16 +94,14 @@
                 <button class="square"></button>
                 <button class="square"></button>
             </div>
-            <button class="btn btn-primary" onclick="resetGame()">Reset Game</button>
+            <div class="reset-game py-2"><button class="btn btn-primary" onclick="resetGame()">Reset Game</button></div>
+            
         </section>
 
 
     </main>
     <!-- Footer -->
-    <footer>
-        &#169 Just Fun N Games
-    </footer>
-    </footer>
+    <footer class="fixed-bottom">&#169 Just Fun N Games</footer>
     <!-- Modal -->
     <div class="modal fade" id="howToPlay" tabindex="-1" aria-labelledby="howToPlayLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -123,7 +130,7 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Understand</button>
                 </div>
             </div>
         </div>

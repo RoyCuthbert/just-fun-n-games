@@ -17,6 +17,8 @@
     --primary-font:"Tilt Neon", sans-serif;
     --heading-light-colour:#FAF8F1;
     --heading-dark-colour:#141815;
+    --bg-light-colour:#FAF8F1;
+    --bg-dark-colour:#141815;
     --noughts-color:#213FCD;
     --crosses-color:#D33131;
 }
@@ -36,4 +38,24 @@
     flex-direction:column;
     color:var(--heading-dark-colour);
     width:100%;
+    text-align: center;
+}
+
+.heading{
+    margin-top: 20px;
+    margin-bottom:10px;
+    line-height:15px;
+}
+
+.game-info{
+    margin-top:20px;
+    margin-bottom:50px;
+}
+
+.grid{
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3,200px);
+    grid-gap:20px;
+    justify-content: center;
 }
