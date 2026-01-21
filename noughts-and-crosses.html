@@ -62,7 +62,8 @@
             </div>
             
             <!-- Gaming information -->
-             <div class="game-title"><h3>Noughts and Crosses</h3>
+             <div class="game-title">
+                <h3>Noughts and Crosses</h3>
             </div>
         </section>
         <section class="container-fluid">
@@ -73,7 +74,7 @@
                 </button>
             </div>
             <!-- labels for players to enter their name -->
-             <div class="row">
+             <div class="row" id="players-results">
                 <div class="playerName pb-5">
                     <label for="player-one">Player One</label>
                     <input type="text" name="player-one" id="player-one" placeholder="Player One">
@@ -97,7 +98,13 @@
                 <button class="square"></button>
                 <button class="square"></button>
             </div>
-            <div class="reset-game py-5"><button class="btn btn-primary" onclick="resetGame()">Reset Game</button></div>
+            <div class="row">
+                <div class="buttons py-4">
+                    <button class="btn btn-primary col-6" onclick="startGame()">Start Game</button>
+                    <button class="btn btn-secondary col-6" onclick="resetGame()">Reset Game</button>
+                </div>
+            </div>
+            
             
         </section>
 
