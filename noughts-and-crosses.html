@@ -23,7 +23,7 @@
         <!-- Bootstrap navigation bar to keep it responsive over different screen sizes -->
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="index.html">
                     <img src="assets/images/favicon/android-chrome-512x512.png" alt="Logo" width="30" height="24"
                         class="d-inline-block align-text-top">
                     Just Fun N Games</a>
@@ -37,7 +37,8 @@
                             <a class="nav-link" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="active" href="noughts-and-crosses.html">Noughts and Crosses</a>
+                            <a class="nav-link active" aria-current="active" href="noughts-and-crosses.html">Noughts and
+                                Crosses</a>
                         </li>
                     </ul>
                     <div class="d-flex align-items-center">
@@ -58,15 +59,40 @@
             <h1>Just Fun N Games</h1>
             <h2>Where you can fight the boredom and play a game</h2>
             <!-- Gaming information -->
+             <h3>Noughts and Crosses</h3>
             <div class="how-to-play">
-                MODAL
+                <!-- Button trigger modal -->
+            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                Launch demo modal
+        </button>
             </div>
         </section>
 
 
     </main>
     <!-- Footer -->
-    <footer>&#169Just Fun N Games</footer>
+    <footer>
+        &#169 Just Fun N Games
+    </footer>
+    </footer>
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
     <!-- Font Awesome Kit -->
     <script src="https://kit.fontawesome.com/aa80f5b7e4.js" crossorigin="anonymous"></script>
     <!-- Bootstap JS File -->
