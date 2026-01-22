@@ -11,7 +11,7 @@ let gameStart = false;
 
 
 // What set needs to be counted as a win
-const winningSets = [
+const winningSets = [[0,1,2],[3,4,5],
   
 ];
 // Random player approach
@@ -52,7 +52,6 @@ function startGame(){
   grid.style.display = "grid";
   playersResults.innerText = players[currentPlayer] + " it's your turn!";
   
-   
   for (let i = 0; i < squares.length; i++) {
     squares[i].innerText = "";
     squares[i].onclick = function () {
@@ -100,6 +99,7 @@ function checkWin() {
   return false;
 }
 // Check if this function is matched with filling up all squares
+// When checking this nothing appears to come up with a draw
 function isDraw() {
   for (let i = 0; i < squares.length; i++) {
       if (squares[i].innerText !== "") {
@@ -118,3 +118,4 @@ function resetGame(){
     squares[i].innerText = "";
   }
 }
+
