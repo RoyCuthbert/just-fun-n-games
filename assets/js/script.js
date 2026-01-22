@@ -2,6 +2,7 @@
 const playersResults = document.getElementById("players-results");
 const grid = document.getElementsByClassName("grid");
 const squares = document.getElementsByClassName("square");
+const markers = ["X", "O"];
 
 // Game variables
 let players = {};
@@ -46,8 +47,17 @@ function startGame(){
   const p1 = document.getElementById("player-one");
   const p2 = document.getElementById("player-two");
 
-  
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].innerText = "";
+    squares[i].onclick = function () {
+      squareClick(i);
+    };
+  }
 
+  function squareClick(index){
+    if (!gameStart || squares[index].innerText === "")return;
+  
+    squares[index].innerText = currentPlayer;
 
 
    if (checkWin()) {
@@ -58,10 +68,22 @@ function startGame(){
   }
 
   if (isDraw()) {
-    playersResults.innerText = "It's a draw!!!"
+    playersResults.innerText = "It's a draw!!!";
     gameStart = false;
     return
+    }
   }
+
+  function choose(){
+    let random = Math.random()*2
+    if (random>1)
+      currentPlayer = "X";
+      oppoPlayer = "O";
+  }else {
+    currentPlayer = "O";
+    oppoPlayer = "X";
+  }
+
 }
 
 function resetGame(){
