@@ -29,10 +29,20 @@ function choosePlayer() {
   }
 }
 
+function switchingPlayers() {
+  if (currentPlayer === "X"){
+    currentPlayer = "O";
+    oppoPlayer = "X";
+  } else {
+    currentPlayer = "X";
+    oppoPlayer = "O";
+  }
+}
+
 // Start game clicking button function
 function startGame(){
-  const p1 = document.getElementById("player-one").value;
-  const p2 = document.getElementById("player-two").value;
+  const p1 = document.getElementById("player-one").value || "Player 1";
+  const p2 = document.getElementById("player-two").value || "Player 2";
 
   players["X"] = p1;
   players["O"] = p2;
@@ -69,6 +79,10 @@ function startGame(){
     gameStart = false;
     return;
     }
+
+  switchingPlayers();
+  
+  playersResults.innerText = players[currentPlayer] + " it's your turn!";
   }
 // Check if winning set is matched
 function checkWin() {
@@ -100,7 +114,7 @@ function resetGame(){
   playersResults.innerText = "";
   grid.style.display = "none";
 
-  for (let i =0; i < squares.length; i++) {
+  for (let i = 0; i < squares.length; i++) {
     squares[i].innerText = "";
   }
 }
