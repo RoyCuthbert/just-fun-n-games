@@ -35,7 +35,7 @@ function choosePlayer() {
     oppoPlayer = "X";
   }
 }
-
+// Switching players
 function switchingPlayers() {
   if (currentPlayer === "X"){
     currentPlayer = "O";
@@ -72,7 +72,14 @@ function startGame(){
     if (!gameStart || squares[index].innerText !== "")return;
   
     squares[index].innerText = currentPlayer;
-    squares[index].classList.add(currentPlayer === "X" ? "crosses" : "noughts");
+    squares[index].classList.remove("crosses");
+    squares[index].classList.remove("noughts");
+      if (currentPlayer === "X"){
+        squares[index].classList.add("crosses");
+      }else{
+        squares[index].classList.add("noughts");
+      }
+  
 
    if (checkWin()) {
     playerWin.innerText = 
