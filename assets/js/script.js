@@ -1,7 +1,11 @@
 // Fixed element selection
 const playersResults = document.getElementById("players-results");
+const playerWin = document.getElementById("player-win");
+const playerLoss = document.getElementById("player-loss");
 const grid = document.getElementsByClassName("grid")[0];
 const squares = document.getElementsByClassName("square");
+
+
 
 // Game variables that change
 let players = {};
@@ -54,7 +58,9 @@ function startGame(){
   gameStart = true;
   grid.style.display = "grid";
   playersResults.innerText = players[currentPlayer] + " it's your turn!";
-  
+  playerWin.innerText = "";
+  playerLoss.innerText = "";
+
   for (let i = 0; i < squares.length; i++) {
     squares[i].innerText = "";
     squares[i].onclick = function () {
@@ -69,11 +75,11 @@ function startGame(){
     
 
    if (checkWin()) {
-    playersResults.innerText = 
-    players[currentPlayer] + " wins!" + 
-    " " +
-
+    playerWin.innerText = 
+    players[currentPlayer] + " wins!";
+    playerLoss.innerText =  
     players[oppoPlayer] + " loses!";
+    playersResults.innerText = "";
     gameStart = false;
     return;
   }
@@ -117,6 +123,8 @@ function isDraw() {
 function resetGame(){
   gameStart = false;
   playersResults.innerText = "";
+  playerWin.innerText = "";
+  playerLoss.innerText = "";
   grid.style.display = "none";
 
   for (let i = 0; i < squares.length; i++) {
