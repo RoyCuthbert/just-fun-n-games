@@ -15,8 +15,9 @@ const winningSets = [
   
 ];
 
+// Check if winning set is matched
 function checkWin() {
-  for (let i = 0; i < winningSquares.length; i++) {
+  for (let i = 0; i < winningSets.length; i++) {
     let set = winningSets[i];
 
     if (
@@ -29,7 +30,7 @@ function checkWin() {
   }
   return false;
 }
-
+// Check if this function is matched with filling up all squares
 function isDraw() {
   for (let i = 0; i <= squares.length; i++) {
       if (squares[i].innerText !== "") {
@@ -39,11 +40,34 @@ function isDraw() {
   return false;
 }
 
- if (checkWin()) {
-    message.innerText = players[currentPlayer] + " wins!";
-    message.innerText = players[oppoPlayer] + "loses!";
+// Start game clicking button function
+function startGame(){
+
+  const p1 = document.getElementById("player-one");
+  const p2 = document.getElementById("player-two");
+
+  
+
+
+
+   if (checkWin()) {
+    playersResults.innerText = players[currentPlayer] + " wins!";
+    playersResults.innerText = players[oppoPlayer] + "loses!";
     gameStart = false;
     return;
   }
+
+  if (isDraw()) {
+    playersResults.innerText = "It's a draw!!!"
+    gameStart = false;
+    return
+  }
+}
+
+function resetGame(){
+  gameStart = false;
+  playersResults.innerText = "";
+  grid.style.display = "none";
+}
 
 
