@@ -19,8 +19,8 @@
     --heading-dark-colour:#141815;
     --bg-light-colour:#FAF8F1;
     --bg-dark-colour:#141815;
-    --noughts-color:#213FCD;
-    --crosses-color:#D33131;
+    --crosses-color:#213FCD;
+    --noughts-color:#D33131;
     --squares-color:#567b82;
 }
 /* Asterisk wildcard selector to overide default styles add by the browser */
@@ -85,6 +85,14 @@ button{
 
 .square:hover{
     background:var(--squares-color)
+}
+
+#crosses{
+    color: var(--crosses-color);
+}
+
+#noughts{
+    color:var(--noughts-color)
 }
 
 footer{
