@@ -2,7 +2,6 @@
 const playersResults = document.getElementById("players-results");
 const grid = document.getElementsByClassName("grid")[0];
 const squares = document.getElementsByClassName("square");
-const markers = ["X", "O"];
 
 // Game variables that change
 let players = {};
@@ -55,12 +54,11 @@ if(Math.random() > 0.5) {
 }else {
   currentPlayer = "O";
   oppoPlayer = "X";
+  }
 }
 
-playersResults.innerText = players[currentPlayer] + "It's your turn!";
 
-gameStart = true;
-grid.style.display = "grid";
+
 // Start game clicking button function
 function startGame(){
   
@@ -71,12 +69,14 @@ function startGame(){
   players.markers[1] = p2;
 
 choose();
+gameStart = true;
+grid.style.display = "grid";
 playersResults.innerText = players[currentPlayer] + "It's your turn!";
   
    
       for (let i = 0; i < squares.length; i++) {
       squares[i].innerText = "";
-      squares[i].onclick = squareClick(i); 
+      squares[i].onclick =()  => squareClick(i); 
   }
 
   function squareClick(index){
