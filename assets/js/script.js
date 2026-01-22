@@ -47,6 +47,11 @@ function startGame(){
   const p1 = document.getElementById("player-one").value;
   const p2 = document.getElementById("player-two").value;
 
+  players.markers[0] = p1;
+  players.markers[1] = p2;
+
+choose();
+playersResults.innerText = players[currentPlayer] + "It's your turn!"
   
 
   for (let i = 0; i < squares.length; i++) {
@@ -64,7 +69,8 @@ function startGame(){
 
    if (checkWin()) {
     playersResults.innerText = 
-    players[currentPlayer] + " wins!" + players[oppoPlayer] + "loses!";
+    players[currentPlayer] + " wins!" + 
+    players[oppoPlayer] + "loses!";
     gameStart = false;
     return;
   }
@@ -76,8 +82,7 @@ function startGame(){
     }
   }
 
-  
-    // Source - https://stackoverflow.com/a
+// Source - https://stackoverflow.com/a
 // Posted by arkeros, modified by community. See post 'Timeline' for change history
 // Retrieved 2026-01-22, License - CC BY-SA 4.0
 // Edited to fit in line with what i needed to be displayed
@@ -90,8 +95,12 @@ if(Math.random() > 0.5) {
   oppoPlayer = "X";
 }
 
-choose();
-playersResults.innerText = players[currentPlayer] + "It's your turn!"
+[currentPlayer, oppoPlayer] = [oppoPlayer, currentPlayer];
+playersResults.innerText = players[currentPlayer] + "It's your turn!";
+
+gameStart = true;
+grid.style.display = "grid";
+
 
 function resetGame(){
   gameStart = false;
