@@ -14,7 +14,62 @@ let gameStart = false;
 const winningSets = [
   
 ];
+// Random player approach
+// Source - https://stackoverflow.com/a
+// Posted by arkeros, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-01-22, License - CC BY-SA 4.0
+// Edited to fit in line with what i needed to be displayed
+function choosePlayer() {
+  if(Math.random() > 0.5) {
+    currentPlayer = "X";
+    oppoPlayer = "O";
+  } else {
+    currentPlayer = "O";
+    oppoPlayer = "X";
+  }
+}
 
+// Start game clicking button function
+function startGame(){
+  const p1 = document.getElementById("player-one").value;
+  const p2 = document.getElementById("player-two").value;
+
+  players["X"] = p1;
+  players["O"] = p2;
+
+  choosePlayer();
+  gameStart = true;
+  grid.style.display = "grid";
+  playersResults.innerText = players[currentPlayer] + " it's your turn!";
+  
+   
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].innerText = "";
+    squares[i].onclick = function () {
+      squareClick(i); 
+    };
+  }
+}
+  function squareClick(index){
+    if (!gameStart || squares[index].innerText !== "")return;
+  
+    squares[index].innerText = currentPlayer;
+    
+
+   if (checkWin()) {
+    playersResults.innerText = 
+    players[currentPlayer] + " wins!" + 
+    players[oppoPlayer] + "loses!";
+    gameStart = false;
+    return;
+  }
+
+  if (isDraw()) {
+    playersResults.innerText = "It's a draw!!!";
+    gameStart = false;
+    return;
+    }
+  }
 // Check if winning set is matched
 function checkWin() {
   for (let i = 0; i < winningSets.length; i++) {
@@ -39,70 +94,13 @@ function isDraw() {
   }
   return true;
 }
-// Random player approach
-// Source - https://stackoverflow.com/a
-// Posted by arkeros, modified by community. See post 'Timeline' for change history
-// Retrieved 2026-01-22, License - CC BY-SA 4.0
-// Edited to fit in line with what i needed to be displayed
-
-
-
-function choose(){
-if(Math.random() > 0.5) {
-  currentPlayer = "X";
-  oppoPlayer = "O";
-}else {
-  currentPlayer = "O";
-  oppoPlayer = "X";
-  }
-}
-
-
-
-// Start game clicking button function
-function startGame(){
   
-  const p1 = document.getElementById("player-one").value;
-  const p2 = document.getElementById("player-two").value;
-
-  players.markers[0] = p1;
-  players.markers[1] = p2;
-
-choose();
-gameStart = true;
-grid.style.display = "grid";
-playersResults.innerText = players[currentPlayer] + "It's your turn!";
-  
-   
-      for (let i = 0; i < squares.length; i++) {
-      squares[i].innerText = "";
-      squares[i].onclick =()  => squareClick(i); 
-  }
-
-  function squareClick(index){
-    if (!gameStart || squares[index].innerText !== "")return;
-  
-     squares[index].innerText = currentPlayer;
-    
-
-   if (checkWin()) {
-    playersResults.innerText = 
-    players[currentPlayer] + " wins!" + 
-    players[oppoPlayer] + "loses!";
-    gameStart = false;
-    return;
-  }
-
-  if (isDraw()) {
-    playersResults.innerText = "It's a draw!!!";
-    gameStart = false;
-    return;
-    }
-  }
-  }
-}  
 function resetGame(){
   gameStart = false;
   playersResults.innerText = "";
   grid.style.display = "none";
+
+  for (let i =0; i < squares.length; i++) {
+    squares[i].innerText = "";
+  }
 }
