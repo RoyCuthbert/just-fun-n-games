@@ -44,8 +44,8 @@ function isDraw() {
 // Start game clicking button function
 function startGame(){
 
-  const p1 = document.getElementById("player-one");
-  const p2 = document.getElementById("player-two");
+  const p1 = document.getElementById("player-one").value;
+  const p2 = document.getElementById("player-two").value;
 
   for (let i = 0; i < squares.length; i++) {
     squares[i].innerText = "";
@@ -76,12 +76,13 @@ function startGame(){
 
   function choose(){
     let random = Math.random()*2
-    if (random>1)
-      currentPlayer = "X";
-      oppoPlayer = "O";
+    let marker = markers[];
+    if (random <= 1)
+      currentPlayer = markers[0];
+      oppoPlayer = markers[1];
   }else {
-    currentPlayer = "O";
-    oppoPlayer = "X";
+    currentPlayer = markers[1];
+    oppoPlayer = markers[0];
   }
 
   if (currentPlayer || oppoPlayer = "X"){
