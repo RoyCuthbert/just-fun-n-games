@@ -1,6 +1,6 @@
 // Fixed element selection
 const playersResults = document.getElementById("players-results");
-const grid = document.getElementsByClassName("grid");
+const grid = document.getElementsByClassName("grid")[0];
 const squares = document.getElementsByClassName("square");
 const markers = ["X", "O"];
 
@@ -33,12 +33,12 @@ function checkWin() {
 }
 // Check if this function is matched with filling up all squares
 function isDraw() {
-  for (let i = 0; i <= squares.length; i++) {
+  for (let i = 0; i < squares.length; i++) {
       if (squares[i].innerText !== "") {
-        return true;
+        return false;
       }
   }
-  return false;
+  return true;
 }
 
 // Start game clicking button function
@@ -46,6 +46,8 @@ function startGame(){
 
   const p1 = document.getElementById("player-one").value;
   const p2 = document.getElementById("player-two").value;
+
+  
 
   for (let i = 0; i < squares.length; i++) {
     squares[i].innerText = "";
@@ -55,14 +57,14 @@ function startGame(){
   }
 
   function squareClick(index){
-    if (!gameStart || squares[index].innerText === "")return;
+    if (!gameStart || squares[index].innerText !== "")return;
   
     squares[index].innerText = currentPlayer;
 
 
    if (checkWin()) {
-    playersResults.innerText = players[currentPlayer] + " wins!";
-    playersResults.innerText = players[oppoPlayer] + "loses!";
+    playersResults.innerText = 
+    players[currentPlayer] + " wins!" + players[oppoPlayer] + "loses!";
     gameStart = false;
     return;
   }
@@ -74,21 +76,22 @@ function startGame(){
     }
   }
 
-  function choose(){
-    let random = Math.random()*2
-    let marker = markers[];
-    if (random <= 1)
-      currentPlayer = markers[0];
-      oppoPlayer = markers[1];
-  }else {
-    currentPlayer = markers[1];
-    oppoPlayer = markers[0];
-  }
-
-  if (currentPlayer || oppoPlayer = "X"){
-    gameStart = true;
-    grid.style.display = "grid";
+  
+    // Source - https://stackoverflow.com/a
+// Posted by arkeros, modified by community. See post 'Timeline' for change history
+// Retrieved 2026-01-22, License - CC BY-SA 4.0
+// Edited to fit in line with what i needed to be displayed
+function choose(){
+if(Math.random() > 0.5) {
+  currentPlayer = "X";
+  oppoPlayer = "O";
+}else {
+  currentPlayer = "O";
+  oppoPlayer = "X";
 }
+
+choose();
+playersResults.innerText = players[currentPlayer] + "It's your turn!"
 
 function resetGame(){
   gameStart = false;
