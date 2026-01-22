@@ -11,9 +11,12 @@ let gameStart = false;
 
 
 // What set needs to be counted as a win
-const winningSets = [[0,1,2],[3,4,5],
-  
+const winningSets = [
+[0,1,2],[3,4,5],[6,7,8],
+[0,3,6],[1,4,7],[2,5,8],
+[0,4,8],[2,4,6]
 ];
+
 // Random player approach
 // Source - https://stackoverflow.com/a
 // Posted by arkeros, modified by community. See post 'Timeline' for change history
@@ -68,7 +71,9 @@ function startGame(){
    if (checkWin()) {
     playersResults.innerText = 
     players[currentPlayer] + " wins!" + 
-    players[oppoPlayer] + "loses!";
+    " " +
+
+    players[oppoPlayer] + " loses!";
     gameStart = false;
     return;
   }
@@ -102,7 +107,7 @@ function checkWin() {
 // When checking this nothing appears to come up with a draw
 function isDraw() {
   for (let i = 0; i < squares.length; i++) {
-      if (squares[i].innerText !== "") {
+      if (squares[i].innerText === "") {
         return false;
       }
   }
