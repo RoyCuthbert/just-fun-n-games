@@ -51,16 +51,7 @@ function startGame(){
   players.markers[1] = p2;
 
 choose();
-playersResults.innerText = players[currentPlayer] + "It's your turn!"
-  
-
-  for (let i = 0; i < squares.length; i++) {
-    squares[i].innerText = "";
-    squares[i].onclick = function () {
-      squareClick(i);
-    };
-  }
-
+playersResults.innerText = players[currentPlayer] + "It's your turn!";
   function squareClick(index){
     if (!gameStart || squares[index].innerText !== "")return;
   
@@ -102,6 +93,15 @@ gameStart = true;
 grid.style.display = "grid";
 
 
+
+  for (let i = 0; i < squares.length; i++) {
+    squares[i].innerText = "";
+    squares[i].onclick = function () {
+      squareClick(i);
+    };
+  }
+
+  
 function resetGame(){
   gameStart = false;
   playersResults.innerText = "";
