@@ -37,7 +37,8 @@
                             <a class="nav-link" aria-label="Navigate back to main page" href="index.html">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" aria-label="Navigate to noughts and crosses page" href="noughts-and-crosses.html">Noughts and
+                            <a class="nav-link active" aria-label="Navigate to noughts and crosses page"
+                                href="noughts-and-crosses.html">Noughts and
                                 Crosses</a>
                         </li>
                     </ul>
@@ -56,22 +57,21 @@
     <main>
         <section>
             <!-- Heading -->
-             <div class="heading">
+            <div class="heading">
                 <h1>Just Fun N Games</h1>
-            <h2>Where you can fight the boredom and play a game</h2>
+                <h2>Where you can fight the boredom and play a game</h2>
             </div>
-            
             <!-- Gaming information -->
-             <div class="game-title">
+            <div class="game-title">
                 <h3>Noughts and Crosses</h3>
             </div>
         </section>
         <div class="container-fluid">
             <div class="row">
                 <div class="how-to-play py-2">
-                <!-- Button trigger modal -->
+                    <!-- Button trigger modal -->
                     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#howToPlay">
-                    How to Play!
+                        How to Play!
                     </button>
                 </div>
                 <!-- labels for players to enter their name -->
@@ -82,16 +82,16 @@
                         <label for="player-two">Player Two <span id="noughts">O</span></label>
                         <input type="text" name="player-two" id="player-two" placeholder="Player Two">
                     </div>
-                </div> 
+                </div>
+                <!-- To be display using javascript of content results upon game -->
                 <div class="display-4 pb-3">
                     <div id="player-win" class="fw-bold text-center"></div>
                     <div id="player-loss" class="fw-bold text-center"></div>
-                    <div id="players-results" class="fw-bold text-center"></div> 
+                    <div id="players-results" class="fw-bold text-center"></div>
                 </div>
             </div>
-            
         </div>
-        <section>
+        <div>
             <!-- For ease of able to select buttons in a grid -->
             <div class="grid">
                 <button type="button" class="square"></button>
@@ -105,16 +105,13 @@
                 <button type="button" class="square"></button>
             </div>
             <div class="row">
+                <!-- Buttons for resetting and starting new game -->
                 <div class="buttons py-4">
-                    <button class="btn btn-primary col-6" onclick="startGame()">Start Game</button>
+                    <button class="btn btn-primary col-6" onclick="startGame()">Start New Game</button>
                     <button class="btn btn-danger col-6" onclick="resetGame()">Reset Game</button>
                 </div>
             </div>
-            
-            
-        </section>
-
-
+        </div>
     </main>
     <!-- Footer -->
     <footer>&#169; Just Fun N Games</footer>

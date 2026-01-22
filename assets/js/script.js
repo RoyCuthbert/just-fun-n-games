@@ -54,8 +54,10 @@ function startGame(){
   players["X"] = p1;
   players["O"] = p2;
 
+  
   choosePlayer();
   gameStart = true;
+  // Providing a grid to be more responsive when clicking start game button
   grid.style.display = "grid";
   playersResults.innerText = players[currentPlayer] + " it's your turn!";
   playerWin.innerText = "";
@@ -68,6 +70,7 @@ function startGame(){
     };
   }
 }
+// Function to allow buttons to work as clicks and to add some if statements
   function squareClick(index){
     if (!gameStart || squares[index].innerText !== "")return;
   

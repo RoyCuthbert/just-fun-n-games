@@ -51,6 +51,7 @@
 .game-info{
     margin-top:20px;
     margin-bottom:50px;
+    font-size:32px;
 }
 
 input{
@@ -65,6 +66,9 @@ button{
     font-size: 30px;
 }
 
+.game-info  a{
+    font-size:50px;
+}
 
 .grid{
     display: none;
