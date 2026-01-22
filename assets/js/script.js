@@ -83,7 +83,7 @@ function startGame(){
         squares[index].classList.add("noughts");
       }
   
-
+// What neeed to be displayed if someone wins
    if (checkWin()) {
     playerWin.innerText = 
     players[currentPlayer] + " wins!";
@@ -93,7 +93,7 @@ function startGame(){
     gameStart = false;
     return;
   }
-
+// What is displayed when game is a draw
   if (isDraw()) {
     playersResults.innerText = "It's a draw!!!";
     gameStart = false;
