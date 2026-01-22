@@ -72,7 +72,7 @@ function startGame(){
     if (!gameStart || squares[index].innerText !== "")return;
   
     squares[index].innerText = currentPlayer;
-    
+    squares[index].classList.add(currentPlayer === "X" ? "crosses" : "noughts");
 
    if (checkWin()) {
     playerWin.innerText = 
@@ -129,6 +129,7 @@ function resetGame(){
 
   for (let i = 0; i < squares.length; i++) {
     squares[i].innerText = "";
+    squares[i].classList.remove("noughts", "crosses");
   }
 }
 

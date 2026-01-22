@@ -81,6 +81,9 @@ button{
     border: 5px var(--heading-dark-colour) solid;
     font-size: large;
     background-color: var(--bg-light-colour);
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .square:hover{
@@ -91,8 +94,28 @@ button{
     color: var(--crosses-color);
 }
 
+.square.crosses{
+    color: var(--crosses-color)!important;
+}
+
+.crosses{
+    color:var(--crosses-color);
+    font-size: 36px;
+    font-weight: 900;
+}
+
 #noughts{
-    color:var(--noughts-color)
+    color:var(--noughts-color);   
+}
+
+.square.noughts{
+    color: var(--noughts-color) !important;
+}
+
+.noughts{
+    color:var(--noughts-color);
+    font-size: 36px;
+    font-weight: 900;
 }
 
 footer{
