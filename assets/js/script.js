@@ -84,6 +84,9 @@ function startGame(){
     oppoPlayer = "X";
   }
 
+  if (currentPlayer || oppoPlayer = "X"){
+    gameStart = true;
+    grid.style.display = "grid";
 }
 
 function resetGame(){
@@ -91,5 +94,3 @@ function resetGame(){
   playersResults.innerText = "";
   grid.style.display = "none";
 }
-
-
