@@ -14,7 +14,6 @@ let currentPlayer = "";
 let oppoPlayer = "";
 let gameStart = false;
 
-
 // What set needs to be counted as a win
 const winningSets = [
   [0, 1, 2],
@@ -29,7 +28,8 @@ const winningSets = [
 
 // Random player approach
 // Source - https://stackoverflow.com/a
-// Posted by arkeros, modified by community. See post 'Timeline' for change history
+// Posted by arkeros, modified by community.
+//  See post 'Timeline' for change history
 // Retrieved 2026-01-22, License - CC BY-SA 4.0
 // Edited to fit in line with what i needed to be displayed
 function choosePlayer() {
@@ -57,9 +57,8 @@ function startGame() {
   const p1 = document.getElementById("player-one").value || "Player 1";
   const p2 = document.getElementById("player-two").value || "Player 2";
 
-  players["X"] = p1;
-  players["O"] = p2;
-
+  players.X = p1;
+  players.O = p2;
 
   choosePlayer();
   gameStart = true;
@@ -69,13 +68,15 @@ function startGame() {
   playerWin.innerText = "";
   playerLoss.innerText = "";
 
+  const handleClick = index => () => squareClick(index);
+
+
   for (let i = 0; i < squares.length; i++) {
     squares[i].innerText = "";
-    squares[i].onclick = function () {
-      squareClick(i);
-    };
+    squares[i].onclick = handleClick(i);
+    }
   }
-}
+
 // Function to allow buttons to work as clicks and to add some if statements
 function squareClick(index) {
   if (!gameStart || squares[index].innerText !== "") return;
@@ -148,3 +149,6 @@ function resetGame() {
     squares[i].classList.remove("noughts", "crosses");
   }
 }
+
+console.log(startGame);
+console.log(resetGame);
