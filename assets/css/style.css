@@ -76,14 +76,13 @@ button {
     justify-content: center;
     grid-template-columns: repeat(3, 60px);
     grid-gap: 30px;
-
 }
 
 .square {
     height: 60px;
     width: 60px;
     cursor: pointer;
-    border: 5px var(--heading-dark-colour) solid;
+    border: 5px var(--bg-dark-colour) solid;
     font-size: large;
     background-color: var(--bg-light-colour);
     display: flex;
