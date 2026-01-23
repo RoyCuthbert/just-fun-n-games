@@ -129,11 +129,13 @@ footer{
 }
 
 .error404{
-    background-image: url(../images/error-404.png);
+    /*Added a linear gradient to make the colour of text stand out but still having same image of the code in background  */
+    background:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.8)),
+    url(../images/error-404.png);
     background-repeat: no-repeat;
     background-size: cover;
-    justify-content: center;
 }
+
 
 .error {
     color:var(--heading-light-colour);
@@ -141,16 +143,23 @@ footer{
     text-transform: uppercase;
 }
 
-/* #no-games { 
+#no-games {
     color: var(--heading-light-colour);
-    margin-top: 5rem;
-}*/
-
-@media screen  and(max-width:768px){
-    .error404{
-        justify-content: center;
-        background-size: cover;
-        height:120%
-    }    
 }
 
+#error-paragraph{
+    color: var(--heading-light-colour);
+   }
+
+
+
+@media screen  and (max-width:768px){
+    .error404{
+        background-position: center;
+        background-size: cover;
+    }
+
+    
+}
+
+@media
