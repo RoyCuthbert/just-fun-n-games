@@ -127,3 +127,9 @@ footer{
     padding-top:10px;
     color: var(--heading-light-colour);
 }
+
+.error404{
+    background-image: url(../images/error-404.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
