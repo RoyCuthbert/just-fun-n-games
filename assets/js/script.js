@@ -1,3 +1,4 @@
+// Game Nought and Crosses Javascript
 // Fixed element selection
 const playersResults = document.getElementById("players-results");
 const playerWin = document.getElementById("player-win");
@@ -16,9 +17,14 @@ let gameStart = false;
 
 // What set needs to be counted as a win
 const winningSets = [
-[0,1,2],[3,4,5],[6,7,8],
-[0,3,6],[1,4,7],[2,5,8],
-[0,4,8],[2,4,6]
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6]
 ];
 
 // Random player approach
@@ -27,7 +33,7 @@ const winningSets = [
 // Retrieved 2026-01-22, License - CC BY-SA 4.0
 // Edited to fit in line with what i needed to be displayed
 function choosePlayer() {
-  if(Math.random() > 0.5) {
+  if (Math.random() > 0.5) {
     currentPlayer = "X";
     oppoPlayer = "O";
   } else {
@@ -37,7 +43,7 @@ function choosePlayer() {
 }
 // Switching players
 function switchingPlayers() {
-  if (currentPlayer === "X"){
+  if (currentPlayer === "X") {
     currentPlayer = "O";
     oppoPlayer = "X";
   } else {
@@ -47,14 +53,14 @@ function switchingPlayers() {
 }
 
 // Start game clicking button function
-function startGame(){
+function startGame() {
   const p1 = document.getElementById("player-one").value || "Player 1";
   const p2 = document.getElementById("player-two").value || "Player 2";
 
   players["X"] = p1;
   players["O"] = p2;
 
-  
+
   choosePlayer();
   gameStart = true;
   // Providing a grid to be more responsive when clicking start game button
@@ -66,44 +72,44 @@ function startGame(){
   for (let i = 0; i < squares.length; i++) {
     squares[i].innerText = "";
     squares[i].onclick = function () {
-      squareClick(i); 
+      squareClick(i);
     };
   }
 }
 // Function to allow buttons to work as clicks and to add some if statements
-  function squareClick(index){
-    if (!gameStart || squares[index].innerText !== "")return;
-  
-    squares[index].innerText = currentPlayer;
-    squares[index].classList.remove("crosses");
-    squares[index].classList.remove("noughts");
-      if (currentPlayer === "X"){
-        squares[index].classList.add("crosses");
-      }else{
-        squares[index].classList.add("noughts");
-      }
-  
-// What neeed to be displayed if someone wins
-   if (checkWin()) {
-    playerWin.innerText = 
-    players[currentPlayer] + " wins!";
-    playerLoss.innerText =  
-    players[oppoPlayer] + " loses!";
+function squareClick(index) {
+  if (!gameStart || squares[index].innerText !== "") return;
+
+  squares[index].innerText = currentPlayer;
+  squares[index].classList.remove("crosses");
+  squares[index].classList.remove("noughts");
+  if (currentPlayer === "X") {
+    squares[index].classList.add("crosses");
+  } else {
+    squares[index].classList.add("noughts");
+  }
+
+  // What neeed to be displayed if someone wins
+  if (checkWin()) {
+    playerWin.innerText =
+      players[currentPlayer] + " wins!";
+    playerLoss.innerText =
+      players[oppoPlayer] + " loses!";
     playersResults.innerText = "";
     gameStart = false;
     return;
   }
-// What is displayed when game is a draw
+  // What is displayed when game is a draw
   if (isDraw()) {
     playersResults.innerText = "It's a draw!!!";
     gameStart = false;
     return;
-    }
+  }
 
   switchingPlayers();
-  
+
   playersResults.innerText = players[currentPlayer] + " it's your turn!";
-  }
+}
 // Check if winning set is matched
 function checkWin() {
   for (let i = 0; i < winningSets.length; i++) {
@@ -123,14 +129,14 @@ function checkWin() {
 // When checking this nothing appears to come up with a draw
 function isDraw() {
   for (let i = 0; i < squares.length; i++) {
-      if (squares[i].innerText === "") {
-        return false;
-      }
+    if (squares[i].innerText === "") {
+      return false;
+    }
   }
   return true;
 }
-  
-function resetGame(){
+// Function resets game allowing all written information to be wiped
+function resetGame() {
   gameStart = false;
   playersResults.innerText = "";
   playerWin.innerText = "";
@@ -142,4 +148,3 @@ function resetGame(){
     squares[i].classList.remove("noughts", "crosses");
   }
 }
-
