@@ -132,4 +132,25 @@ footer{
     background-image: url(../images/error-404.png);
     background-repeat: no-repeat;
     background-size: cover;
+    justify-content: center;
 }
+
+.error {
+    color:var(--heading-light-colour);
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/* #no-games { 
+    color: var(--heading-light-colour);
+    margin-top: 5rem;
+}*/
+
+@media screen  and(max-width:768px){
+    .error404{
+        justify-content: center;
+        background-size: cover;
+        height:120%
+    }    
+}
+
