@@ -149,6 +149,3 @@ function resetGame() {
     squares[i].classList.remove("noughts", "crosses");
   }
 }
-
-console.log(startGame);
-console.log(resetGame);
