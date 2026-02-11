@@ -127,7 +127,6 @@ function checkWin() {
   return false;
 }
 // Check if this function is matched with filling up all squares
-// When checking this nothing appears to come up with a draw
 function isDraw() {
   for (let i = 0; i < squares.length; i++) {
     if (squares[i].innerText === "") {
